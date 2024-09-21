@@ -1,9 +1,12 @@
 import express from 'express'
-import upload from '../Utilities/multer.js'
-import { login, registerUser } from '../controller/userController.js'
+import { deleteUser, getUserId, getUsers, login, registerUser, updateUser } from '../controller/userController.js'
 const router = express.Router()
 
-router.post('/register',upload.single('profile'), registerUser)
+router.post('/register', registerUser)
 router.post('/login', login)
+router.get('/', getUsers)
+router.get('/:id', getUserId)
+router.put('/:id', updateUser)
+router.delete('/:id', deleteUser)
 
 export default router
