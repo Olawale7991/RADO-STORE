@@ -16,14 +16,14 @@ const Login = () => {
     try {
       if (currentState === 'Login') {
         // Login API Call
-        const response = await axios.post('http://localhost:8081/login', { email, password });
+        const response = await axios.post('https://rado-store-backend.onrender.com/login', { email, password });
         console.log('Login successful', response.data);
 
         // Navigate to home page on successful login
         navigate('/'); 
       } else {
         // Sign Up API Call
-        const response = await axios.post('http://localhost:8081/register', { name, email, password });
+        const response = await axios.post('https://rado-store-backend.onrender.com/register', { name, email, password });
         console.log('Sign Up successful', response.data);
 
         // Optionally redirect after successful signup
